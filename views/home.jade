@@ -1,0 +1,223 @@
+//
+   Created by yucheng on 23/08/15.
+
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title PARIS Ads Demo
+    body
+        div.modal.fade#loginWindow(role="dialog")
+            div.modal-dialog
+                div.modal-content
+                    div.modal-header
+                        button.close(type="button", data-dismiss="modal")
+                        h4.modal-title Message
+                    div.modal-body
+                        p Please login our web application through facebook, we will show personalized ads based on your facebook profile, and all your data will be deleted after evaluation.
+                    div.modal-footer
+                        button.btn.btn-default(type="button", data-dismiss="modal")
+                            span Close
+
+        div.page-header.container-fluid
+            div.row
+                div.col-md-10
+                    a.home(href="/")
+                        img.logo(src='images/logo.png')
+                    span &nbsp&nbspAds Demo
+                div.col-md-2
+                    div.fb-login-button(data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true" data-scope="public_profile, user_posts")
+                    div#status
+        div.container-fluid
+            div.col-md-10
+                label(for="movie") Select A Movie&nbsp&nbsp
+                select#movie-selector(name="movie")
+                    option(movie=0) Minions
+                    option(movie=1) Jurassic World
+                    option(movie=2) Ted 2
+                    option(movie=3) Furious 7
+                br
+                div.video-container
+                    div#player
+                div#movieID.sr-only eisKxhjBnZ0
+            div.col-md-2
+                div.row.ad-top-buffer.ad-window
+                    img.ad-show.side-windowv
+                    span.sr-only.ad-category
+                    span.sr-only.ad-brand
+                    span.sr-only.ad-color
+                    div.row.ad-top-buffer.taste-btns(style="display:none")
+                        div.col-md-6
+                            button(value="like")#like.center-block.taste-button.btn.btn-success
+                                span Like
+                        div.col-md-6
+                            button(value="dislike")#dislike.center-block.taste-button.btn.btn-danger
+                                span Dislike
+                    div.row.ad-top-buffer.alert.alert-success(role="alert") &#9786 Thank you.
+                    div.row.ad-top-buffer.alert.alert-danger(role="alert") Sorry, but you can configure your profile to get other ads on the right side.
+                div.row.ad-top-buffer.ad-explanation.detail-info(style="display:none")
+
+                div.row.ad-top-buffer.user-model.detail-info(style="display:none")
+                    div.side-window.text-centered.wordwrap
+                        strong(style="color:#FF0000; font-size:12px") The data is from your Facebook.
+                        p#movie-text
+                            span(style="font-weight: normal") You are watching the movie&nbsp
+                            span#movie_name.value(style="color:#0052CC") Minions
+                        img.gender-pic.side-window
+                        p#age_value.value(style="color:#0052CC")
+                        p#person-text(style="font-weight: normal") You are&nbsp
+                            span.person-value.value(style="color:#0052CC")
+                    div.side-window.text-centered.wordwrap
+                        h5(style="font-size:15px") Why I get this Ad?
+                        p.general-ad(style="display:none; color:red") This ad is not personalized, because no personalized ad matches your profile. but you can configure your profile to get other ads on the right side.
+                        div.personalized-ad(style="display:none")
+                            canvas#explain-canvas
+                    div.sr-only#user_id
+            div.col-md-3(style="display:none")
+                div.side-container
+                    div.user-model &nbsp&nbspAvailable Ads for you:&nbsp
+                        span#ads-num.val
+                    div#all_chart
+                    //age view
+                    hr.split
+                    div.user-model
+                        span.sr-only#age_level
+                        label(for="age") &nbsp&nbspAge:&nbsp&nbsp&nbsp
+                        select#age-selector(name="age")
+                            option(value='') -Not applicable-
+                            option(value=0) between 12 and 17
+                            option(value=1) between 18 and 24
+                            option(value=2) between 25 and 34
+                            option(value=3) between 35 and 44
+                            option(value=4) between 45 and 54
+                            option(value=5) between 55 and 64
+                            option(value=6) older than 65
+                    //gender view
+                    hr.split
+                    div.user-model
+                        span &nbsp&nbspGender:&nbsp
+                        span#gender.sr-only
+                        label.age-lable(for="female") &nbsp&nbspFemale&nbsp&nbsp
+                        input#female.gender-box(type="radio", name="gender", value="female")
+                        label.age-lable(for="male") &nbsp&nbsp&nbsp&nbspMale&nbsp&nbsp
+                        input#male.gender-box(type="radio", name="gender", value="male")
+                        label.age-lable(for="unisex") &nbsp&nbsp&nbsp&nbspUnisex&nbsp&nbsp
+                        input#unisex.gender-box(type="radio", name="gender", value='')
+                    //personality view
+                    hr.split
+                    div#personality.user-model.side-window
+                        span &nbsp&nbspPersonality:
+                        div.box-wrap
+                            label#openness-text.statement &#8250&#8250 Inventive/Curious&nbsp
+                                b more than&nbsp
+                                span Consistent/Cautious
+                                span.sr-only#openness
+                            ul.likert
+                                li
+                                    input#ope_0.openness-box(type="radio", name="ope", value=4)
+                                    label(for="ope") Strongly agree
+                                li
+                                    input#ope_1.openness-box(type="radio", name="ope", value=3)
+                                    label(for="ope") Agree
+                                li
+                                    input#ope_2.openness-box(type="radio", name="ope", value=2)
+                                    label(for="ope") Neutral
+                                li
+                                    input#ope_3.openness-box(type="radio", name="ope", value=1)
+                                    label(for="ope") Disagree
+                                li
+                                    input#ope_4.openness-box(type="radio", name="ope", value=0)
+                                    label(for="ope") Strongly disagree
+                            label#agreeableness-text.statement &#8250&#8250 Friendly/Compassionate&nbsp
+                                b more than&nbsp
+                                span Analytical/Detached
+                                span.sr-only#agreeableness
+                            ul.likert
+                                li
+                                    input#agr_0.agreeableness-box(type="radio", name="agr", value=4)
+                                    label(for="agr") Strongly agree
+                                li
+                                    input#agr_1.agreeableness-box(type="radio", name="agr", value=3)
+                                    label(for="agr") Agree
+                                li
+                                    input#agr_2.agreeableness-box(type="radio", name="agr", value=2)
+                                    label(for="agr") Neutral
+                                li
+                                    input#agr_3.agreeableness-box(type="radio", name="agr", value=1)
+                                    label(for="agr") Disagree
+                                li
+                                    input#agr_4.agreeableness-box(type="radio", name="agr", value=0)
+                                    label(for="agr") Strongly disagree
+                            label#agreeableness-text.statement &#8250&#8250 Efficient/Organized&nbsp
+                                b more than&nbsp
+                                span Easy-going/Careless
+                                span.sr-only#conscientiousness
+                            ul.likert
+                                li
+                                    input#con_0.conscientiousness-box(type="radio", name="con", value=4)
+                                    label(for="con") Strongly agree
+                                li
+                                    input#con_1.conscientiousness-box(type="radio", name="con", value=3)
+                                    label(for="con") Agree
+                                li
+                                    input#con_2.conscientiousness-box(type="radio", name="con", value=2)
+                                    label(for="con") Neutral
+                                li
+                                    input#con_3.conscientiousness-box(type="radio", name="con", value=1)
+                                    label(for="con") Disagree
+                                li
+                                    input#con_4.conscientiousness-box(type="radio", name="con", value=0)
+                                    label(for="con") Strongly disagree
+                            label#extraversion-text.statement &#8250&#8250 Outgoing/Energetic&nbsp
+                                b more than&nbsp
+                                span Solitary/Reserved
+                                span.sr-only#extraversion
+                            ul.likert
+                                li
+                                    input#ext_0.extraversion-box(type="radio", name="ext", value=4)
+                                    label(for="ext") Strongly agree
+                                li
+                                    input#ext_1.extraversion-box(type="radio", name="ext", value=3)
+                                    label(for="ext") Agree
+                                li
+                                    input#ext_2.extraversion-box(type="radio", name="ext", value=2)
+                                    label(for="ext") Neutral
+                                li
+                                    input#ext_3.extraversion-box(type="radio", name="ext", value=1)
+                                    label(for="ext") Disagree
+                                li
+                                    input#ext_4.extraversion-box(type="radio", name="ext", value=0)
+                                    label(for="ext") Strongly disagree
+                            label#emotion_range-text.statement &#8250&#8250 Sensitive/Nervous&nbsp
+                                b more than&nbsp
+                                span Secure/Confident
+                                span.sr-only#emotion_range
+                            ul.likert
+                                li
+                                    input#emo_0.emotion_range-box(type="radio", name="emo", value=4)
+                                    label(for="emo") Strongly agree
+                                li
+                                    input#emo_1.emotion_range-box(type="radio", name="emo", value=3)
+                                    label(for="emo") Agree
+                                li
+                                    input#emo_2.emotion_range-box(type="radio", name="emo", value=2)
+                                    label(for="emo") Neutral
+                                li
+                                    input#emo_3.emotion_range-box(type="radio", name="emo", value=1)
+                                    label(for="emo") Disagree
+                                li
+                                    input#emo_4.emotion_range-box(type="radio", name="emo", value=0)
+                                    label(for="emo") Strongly disagree
+    script(type='text/javascript', src='https://www.google.com/jsapi')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(type='text/javascript', src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    script(type='text/javascript', src='https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js')
+    script(type='text/javascript' src='http://code.jquery.com/ui/1.11.4/jquery-ui.js')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css')
+    link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css')
+    script(type='text/javascript', src='js/login.js')
+    script(type='text/javascript', src='js/visualization.js')
+    link(rel='stylesheet', href='css/main.css')

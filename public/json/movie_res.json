@@ -1,0 +1,89 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/sLbXneTErDvS3HIjqRWQJPiZ4Ci.jpg",
+      "genre_ids": [
+        10751,
+        16,
+        12,
+        35
+      ],
+      "id": 211672,
+      "original_language": "en",
+      "original_title": "Minions",
+      "overview": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+      "release_date": "2015-06-25",
+      "poster_path": "/s5uMY8ooGRZOL0oe4sIvnlTsYQO.jpg",
+      "popularity": 48.120086,
+      "title": "Minions",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 881
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/t5KONotASgVKq4N19RyhIthWOPG.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878,
+        53
+      ],
+      "id": 135397,
+      "original_language": "en",
+      "original_title": "Jurassic World",
+      "overview": "Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond.",
+      "release_date": "2015-06-12",
+      "poster_path": "/uXZYawqUsChGSj54wcuBtEdUJbh.jpg",
+      "popularity": 37.056397,
+      "title": "Jurassic World",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 1807
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nkwoiSVJLeK0NI8kTqioBna61bm.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 214756,
+      "original_language": "en",
+      "original_title": "Ted 2",
+      "overview": "Newlywed couple Ted and Tami-Lynn want to have a baby, but in order to qualify to be a parent, Ted will have to prove he's a person in a court of law.",
+      "release_date": "2015-06-26",
+      "poster_path": "/A7HtCxFe7Ms8H7e7o2zawppbuDT.jpg",
+      "popularity": 16.317035,
+      "title": "Ted 2",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 504
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/c1OSRvorPXvGtFka7mgV6Jcw6jd.jpg",
+      "genre_ids": [
+        28,
+        12,
+        80,
+        10749,
+        53
+      ],
+      "id": 168259,
+      "original_language": "en",
+      "original_title": "Furious 7",
+      "overview": "Dominic and his crew thought they left the criminal mercenary life behind. They defeated an international terrorist named Owen Shaw and went their seperate ways. But now, Shaw's brother, Deckard Shaw is out killing the crew one by one for revenge. Worse, a Somalian terrorist called Jakarde, and a shady government official called \"Mr. Nobody\" are both competing to steal a computer terrorism program called God's Eye, that can turn any technological device into a weapon. Torretto must reconvene with his team to stop Shaw and retrieve the God's Eye program while caught in a power struggle between terrorist and the United States government",
+      "release_date": "2015-04-03",
+      "poster_path": "/dCgm7efXDmiABSdWDHBDBx2jwmn.jpg",
+      "popularity": 16.011666,
+      "title": "Furious 7",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 1360
+    }
+  ],
+  "total_pages": 11657,
+  "total_results": 233125
+}
